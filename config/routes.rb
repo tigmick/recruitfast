@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :resumes do 
+    member do
+      get :download
+    end
+  end 
   devise_for :users
   get 'welcome/index'
 

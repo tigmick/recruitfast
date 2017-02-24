@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   ROLES = ['client','candidate']
 
+  has_many :resumes
+
   def client?
     role == :client
   end
