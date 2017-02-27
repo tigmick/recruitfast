@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @resume.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @resume.description %>
+</p>
+<p>
+  <strong>CV:</strong>
+  <!-- <iframe src="<%= @resume.cv.url%>"></iframe> -->
+  <%= link_to @resume.cv.url, download_resume_path(@resume) %>
+</p>
+
+<%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'Back', resumes_path %>
