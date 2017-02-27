@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'jobs/index'
 
+=======
+>>>>>>> 2a7c8b3d7329d9648932dc7250f5ee158e7f6dc4
   resources :resumes do 
     member do
       get :download
     end
+<<<<<<< HEAD
   end
   resources :jobs
+=======
+  end 
+>>>>>>> 2a7c8b3d7329d9648932dc7250f5ee158e7f6dc4
   devise_for :users
   get 'welcome/index'
 
