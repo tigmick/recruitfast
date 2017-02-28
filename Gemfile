@@ -55,3 +55,8 @@ group :development do
 end
 
 gem 'pg_search'
+
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+
+
+gem 'unicorn'
