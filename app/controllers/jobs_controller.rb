@@ -19,12 +19,13 @@ class JobsController < ApplicationController
 
   # GET /Jobs/1/edit
   def edit
+    debugger
   end
 
   # POST /Jobs
   # POST /Jobs.json
   def create
-    @job = Job.new(job_params)
+    @job = current_user.jobs.new(job_params)
 
     respond_to do |format|
       if @job.save

@@ -24,8 +24,7 @@ class ResumesController < ApplicationController
   # POST /resumes
   # POST /resumes.json
   def create
-    @resume = Resume.new(resume_params)
-
+    @resume = current_user.resumes.new(resume_params)
     respond_to do |format|
       if @resume.save
         format.html { redirect_to @resume, notice: 'Resume was successfully created.' }
@@ -63,8 +62,9 @@ class ResumesController < ApplicationController
 
   def download
     doc = Resume.find(params[:id])
-    data = open("#{doc.cv.path}") 
-    send_data data.read, filename: "#{doc.cv}", :type=>"application/#{doc.cv.path.split(".").last}", disposition: 'inline', stream: 'true', buffer_size: '4096' 
+    data = open("#{doc.cv.path}")
+    send_data data.read, filename: "#{doc.cv.path}", :type=>"application/#{doc.cv.path.split(".").last}", disposition: 'inline', stream: 'true', buffer_size: '4096' 
+    return
   end
 
   private
