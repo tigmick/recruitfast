@@ -38,6 +38,11 @@ development:
   database: recruitment_development
   password: 12345678
 
+production:
+  <<: *default
+  database: recruitment_production
+  password: 12345678
+
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 # development:

@@ -1,6 +1,13 @@
 <% @search.each do |search| %>
   Job Title : <%= search.searchable.title%><br/>
   Job Description : <%= search.searchable.description %><br/>
-  <%= button_tag "Apply", id: "apply_#{search.searchable.id}"%>
+  <%= button_tag "Apply", id: "apply_#{search.searchable.id}", class: "search_btn btn btn-primary"%>
   <br/>
 <% end %>
+
+<script type="text/javascript">
+  // $(".search_btn").click(function(){
+  //   debugger
+  //   var btn_id = $(this).attr("id")
+  // })
+</script>
