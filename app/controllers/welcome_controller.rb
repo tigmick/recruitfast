@@ -30,7 +30,7 @@ class WelcomeController < ApplicationController
       b = User.maximum(:salary_expectation)
     end
 
-   @users =  User.where("lower(first_name) LIKE ? AND role = ? OR lower(current_location) LIKE ? OR lower(salary_expectation) BETWEEN ? AND ?","#{params[:search_candidate].downcase}%", "candidate", "#{params[:location_search].downcase}%", a, b)
+   @users =  User.where("lower(first_name) LIKE ? AND role = ? OR lower(current_location) LIKE ? AND lower(salary_expectation) BETWEEN ? AND ?","#{params[:search_candidate].downcase}%", "candidate", "#{params[:location_search].downcase}%", a, b)
   end
 end
 
