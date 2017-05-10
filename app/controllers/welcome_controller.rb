@@ -39,7 +39,7 @@ class WelcomeController < ApplicationController
       @users =  User.where(role: 'candidate').where("lower(first_name) LIKE ? AND lower(salary_expectation) BETWEEN ? AND ?","#{params[:search_candidate].downcase}%", a, obj)
 
     elsif params[:location_search].present?
-      @users =  User.where(role: 'candidate').where("lower(current_location) LIKE ? AND lower(salary_expectation) BETWEEN ? AND ?", a, obj)
+      @users =  User.where(role: 'candidate').where("lower(current_location) LIKE ? AND lower(salary_expectation) BETWEEN ? AND ?", "#{params[:location_search].downcase}%", a, obj)
 
     elsif  params[:salary_aearch].present?
       @users =  User.where(role: 'candidate').where("lower(salary_expectation) BETWEEN ? AND ?", a, obj)
