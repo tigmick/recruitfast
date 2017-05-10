@@ -20,17 +20,17 @@ class WelcomeController < ApplicationController
     if params[:salary_aearch].present?
       if params[:salary_aearch] < "60000"
         a = "0"   
-        b = params[:salary_aearch].to_s
+        obj = params[:salary_aearch].to_s
       else
         a = "60000"
-        b = User.maximum(:salary_expectation)
+        obj = User.maximum(:salary_expectation)
       end
     else
       a = "0"
-      b = User.maximum(:salary_expectation)
+      obj = User.maximum(:salary_expectation)
     end
-
-   @users =  User.where("lower(first_name) LIKE ? AND role = ? OR lower(current_location) LIKE ? AND lower(salary_expectation) BETWEEN ? AND ?","#{params[:search_candidate].downcase}%", "candidate", "#{params[:location_search].downcase}%", a, b)
+   
+    @users =  User.where("lower(first_name) LIKE ? AND role = ? AND lower(current_location) LIKE ? AND lower(salary_expectation) BETWEEN ? AND ?","%#{params[:search_candidate].downcase}%", "candidate", "%#{params[:location_search].downcase}%", a, obj)
   end
 end
 
