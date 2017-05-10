@@ -13,5 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
+//= require datetimepicker
 //= require_tree .
+
+
+$(".navi").click(function(){
+ $("body").toggleClass("nav_open");
+});
+$("nav .nav > li > a").click(function(){
+ $("body").removeClass("nav_open");
+});
+
+$("nav .form-group").click(function(){
+	$("nav.navbar.navbar-default").toggleClass("nav_open");
+});

@@ -1,15 +1,28 @@
 class JobsController < ApplicationController
+  include JobsHelper
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:download]
+
 
   # GET /Jobs
   # GET /Jobs.json
   def index
-    @jobs = Job.all
+
+    job_ids = AssignJob.all.collect{|k| k.user_ids.include?(current_user.id) ? k.job_id : []}.flatten
+    @jobs = Job.all.order('created_at desc')
+    if current_user.client? 
+      @jobs =  current_user.jobs.order('created_at desc')
+      @jobs << Job.where('id IN (?)',job_ids)
+      @jobs = @jobs.flatten
+    end
   end
 
   # GET /Jobs/1
   # GET /Jobs/1.json
   def show
+    @users = UserJob.all.collect{|k| k.job_ids.include?(@job.id) ? User.find(k.user_id) : []}.flatten
+    @interview = Interview.new
+    @schedules =  @job.interview.present? ? @job.interview.interview_schedules : []
   end
 
   # GET /Jobs/new
@@ -19,7 +32,7 @@ class JobsController < ApplicationController
 
   # GET /Jobs/1/edit
   def edit
-    debugger
+    
   end
 
   # POST /Jobs
@@ -29,6 +42,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
+        UserMailer.job_creation(@job).deliver_now 
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
@@ -62,6 +76,15 @@ class JobsController < ApplicationController
     end
   end
 
+  def download
+    doc = Job.find(params[:id])
+    file = File.open(open("#{doc.document.path}"))
+    data = file.read
+    # doc.track_resume(params[:job_id])  if current_user.client? 
+    send_data(data, :type => "application/#{doc.document.path.split(".").last}", :filename => "#{doc.document_file_name}", :x_sendfile=>true)
+    return
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job
@@ -70,6 +93,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description,:industry_id)
+      params.require(:job).permit(:title, :description,:industry_id,:document)
     end
 end

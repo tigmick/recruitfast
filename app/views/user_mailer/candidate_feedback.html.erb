@@ -1,0 +1,8 @@
+Hi 
+<%= (@resource.first_name.present? rescue false) ? @resource.first_name : "Admin"  %>
+<div style="margin-top:10px;">
+<%=  @content.html_safe %>                                                          
+</div>
+<div style="margin-top:10px;">
+<b>Regards<br>
+MYPHD <br>Team</b></div>

@@ -1,0 +1,11 @@
+<%@users.each do |user|%>
+<%#=current_user.first_name%> Asign Job to 
+ <%= user.first_name %>
+ <% unless @assign_users.include?(user.id)%> 
+ <%= link_to "assign job",job_assign_jobs_path(@job,:user_id => user.id) ,class: 'btn btn-primary',id: "assign_user_#{user.id}",remote: true,method: :post%>
+ <%else%>
+ <%#debugger%>
+ <%= link_to "un-assign job",remove_assign_job_assign_job_path(@job,@assign_job,user_id: user.id) ,class: 'btn btn-danger',id: "assign_user_#{user.id}",remote: true,method: :post%>
+ <%end%>
+ <br><br>
+<%end%>

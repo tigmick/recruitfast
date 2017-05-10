@@ -12,6 +12,32 @@ ActiveAdmin.register Job do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  batch_action :destroy do |ids|
+    redirect_to collection_path, alert: "Didn't really delete these!"
+  end
+
+  permit_params :title, :description,:industry_id
+  index do
+    selectable_column
+    column :title
+    #column :description
+    column "description" do |job|
+          truncate(job.description, omision: "...", length: 100)
+        end
+    column :industry_id
+    actions
+  end
+
+  form do |f|
+    f.inputs "User Details" do
+      f.input :title
+      f.input :description
+      f.label :industry_id, class: "select-role"
+      f.select("industry_id", Industry.all.collect {|p| [ p.title, p.id ] }, {include_blank: 'None'})
+      
+    end
+    f.actions
+  end
 
 
 end

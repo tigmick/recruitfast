@@ -1,0 +1,4 @@
+$("#assign_user_<%=  @user.id %>").removeClass('btn-danger')
+$("#assign_user_<%=  @user.id %>").addClass('btn-primary')
+$("#assign_user_<%=  @user.id %>").attr("href","/jobs/<%= @assign_job.job.id%>/assign_jobs?user_id=<%= @user.id%>")
+$("#assign_user_<%=  @user.id %>").text("Assign Job")

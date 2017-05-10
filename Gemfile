@@ -7,6 +7,7 @@ gem 'rails', '4.2.7'
 # gem 'sqlite3'
 
 gem 'pg'
+gem 'will_paginate-bootstrap'
 
 # gem 'mysql2'
 # Use SCSS for stylesheets
@@ -31,6 +32,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'cancancan'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # for uploading 
@@ -60,3 +65,7 @@ gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 
 
 gem 'unicorn'
+
+group :production do
+	gem 'byebug'
+end

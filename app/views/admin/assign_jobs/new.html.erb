@@ -1,0 +1,4 @@
+<%@users.each do |user|%>
+ <%= user.first_name %>
+ <%= link_to "assign job",job_assign_jobs_path(@job,:user_id => user.id) ,class: 'btn btn-primary',id: "assign_user_#{user.id}",remote: true,method: :post%>
+<%end%>

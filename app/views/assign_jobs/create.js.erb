@@ -1,0 +1,4 @@
+$("#assign_user_<%=  @user.id %>").removeClass('btn-primary')
+$("#assign_user_<%=  @user.id %>").addClass('btn-danger')
+$("#assign_user_<%=  @user.id %>").attr("href","/jobs/<%= @job.id %>/assign_jobs/<%= @assign_job.id%>/remove_assign?user_id=<%= @user.id%>")
+$("#assign_user_<%=  @user.id %>").text("Un-Assign Job")

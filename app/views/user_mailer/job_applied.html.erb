@@ -1,0 +1,9 @@
+Hi <%= (@resource.first_name.present? rescue false) ? @resource.first_name : "Admin" %>
+<div style="margin-top:10px;"> 
+You have a new Applicant for your job title - <%= @job.title%>
+</div>
+
+<div style="margin-top:10px;"> 
+<b>Regards <br> MYPHD <br>
+Team
+</div>

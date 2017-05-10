@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,4 +13,189 @@
  *= require_tree .
  *= require_self
  *= stub active_admin
+ *= require datetimepicker
  */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+nav{max-width: 100% !important; right:0 !important; margin:0;}
+
+.table.table-bordered td a{color:#4286f5;}
+
+.sign_pop > a.btn, h5 a.btn{color:#fff !important;}
+a:hover{background:rgba(0,0,0,0); color:#4286f5;}
+.sign_pop h3{font-size:15px;}
+.banner{margin-top:-60px; position:relative;}
+.banner_cov{margin-top:-60px;}
+body{position:absolute;min-width: 100%;min-height: 100%;  padding-bottom:50px;}
+footer{clear:both;margin-top:10px;position:absolute;bottom:0; left:0; width:100%;}
+.sign_pop > a:hover{background:#4286f5; color:#333;}
+.sign_pop > a.btn:hover{color:#fff;}
+.sign_pop input[type="text"], .sign_pop input[type="email"], .sign_pop textarea, .sign_pop select{width: 100%;  min-height:26px;}
+.sign_pop input[type="submit"]{background:#00780f; color:#fff; padding:5px 12px; border:0px solid #00780f}
+.dropdown-menu .divider{margin:0px;}
+.field_with_errors label{color:#fff;}
+.logo_txt{font-family:arial;font-size: 24px;font-weight: 400;}
+footer{clear:both; margin-top:10px;}
+.banner{margin-top:-50px;}
+.navbar-default{margin:0;}
+.navbar-default{background-color:#000; border-radius:0; border:0px solid rgba(0,0,0,0);}
+.navbar-default .navbar-nav > li > a{padding:7px 10px;}
+.sign_pop {  margin-left:0 !important; width:100% !important;   background: #fff;    border: 1px solid #ddd;    margin-top: 30px;    border-radius: 10px;    padding: 20px;    margin-bottom: 30px;}
+.sign_pop h2{font-size:18px; text-align:center; margin-top:20px;}
+.field label{font-weight:400;}
+.banner_cov{position:relative;margin-bottom:-220px;}
+.banner_cov:after{content:""; height:100%; width:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.7)}
+.field .form-control{border-radius:0px; box-shadow:0 0 0 0 rgba(0,0,0,0);}
+.banner_cov, .banner_cov img{width:100%; float:left;}
+.navbar-form input[type="submit"]{background:#4286f5; border:0px solid rgba(0,0,0,0); color:#fff; padding:5px 11px;}
+nav .nav > li:first-child{border:0px solid rgba(0,0,0,0);}
+.navbar-default .navbar-nav > li > a{padding:4px 11px; font-size: 14px; color: #fff; margin-left: 10px; letter-spacing: 0;}
+nav.navbar.navbar-default{background:rgba(0,0,0,0); margin-bottom:0px; z-index:10;}
+a.link{text-decoration:underline; padding:7px 12px; float:right;}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{color:#fff; background-color:cornflowerblue;}
+.table-bordered th{background:#333; color:#fff;}
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{border:1px solid #333;}
+.table-bordered{border-top:1px solid #333;}
+.sign_pop h1{font-size:22px;}
+.media-left{float:left; margin-right:15px;}
+section p{font-size:14px;}
+ul.nav.navbar-nav.add_focus li:hover > a, .dropdown-menu > li:hover a{background:#4286f5; color:#fff;}
+ul.nav.navbar-nav.add_focus li:last-child a.btn-primary, ul.nav.navbar-nav.add_focus li:last-child:hover a.btn-primary, ul.nav.navbar-nav.add_focus li:last-child a.btn-primary:hover{background: #00780f;border-color: #00780f;}
+nav .form-group{float:right; margin-left:15px;  position:relative;}
+.content h1{font-family: open sans;  font-size: 45px;  font-weight: 300;}
+.content p{font-family:open sans;  font-size: 15px; font-weight: 300;}
+.modal-content{max-width:600px;}
+#myModal input.form-control{clear:both;  float: left;  max-width: 100%;}
+.sign_pop input[type="submit"] {
+  float: left;
+  margin: 0 0 0 6px;
+  padding: 8px 23px;
+}
+.static_page h1 {
+  color: #4286f5;
+}
+#notice:empty {
+  display: none;
+}
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+.modal-content{overflow-y:auto;}
+.col-md-6.sign_pop.col-md-offset-3 .banner_cov {
+  display: none;
+}
+.edit_user {
+  display: inline-block;
+}
+.sign_pop input[type="submit"]{ margin:0 15px 0 0 !important;}
+div.field, div.actions {
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+div.actions input {
+  margin: 0 10px 0 0 !important;
+}
+.jobs_tb.table-bordered tr td a{color:#4286f5}
+.col-md-6.sign_pop.col-md-offset-3 .container{margin:0; width:100%; max-width:100%;}
+.col-md-6.sign_pop.col-md-offset-3 .col-md-10.sign_pop.col-md-offset-1{ margin:0; border:0px solid rgba(0,0,0,0); padding:0; max-width:100%;}
+.sign_pop .close{opacity:1;}
+.jobs_tb.table-bordered tr td:nth-child(4) a:before{font-size:14px; content:" "; font-family:fontawesome;}
+.jobs_tb.table-bordered tr td:nth-child(5) a:before{font-size:14px; content:" "; font-family:fontawesome;}
+.jobs_tb.table-bordered tr td:nth-child(6) a:before{font-size:14px; content:" "; font-family:fontawesome; color:#f00; }
+.jobs_tb.table-bordered tr td a:hover{background:rgba(0,0,0,0);}
+.jobs_tb.table-bordered tr td:nth-child(6) a{color:#f00;}
+.sign_pop .banner_cov { display: none;}
+.sign_pop .container{margin:0; max-width:100%;  padding:0}
+.sign_pop .container .row{margin:0; padding:0}
+.sign_pop .container .row .sign_pop{padding:0; margin:0; border:0px solid rgba(0,0,0,0)}
+#notice{background: rgba(140, 255, 154, 0.6); color: green;  padding: 9px;}
+.header-form .form-control {
+  border-radius: 0;
+  height: 30px;
+  padding: 4px 11px;
+}
+table.job_viw {
+  min-width: 100%;
+}
+table.job_viw tr td:first-child {
+  width: 20%;
+}
+table.job_viw tr td{padding:8px 12px;}
+.modal-content .form-group{display:inline-block; width:100%;}
+#myModal input.form-control{max-width:80%;}
+.job_bx{background:#e7f7fb; border:1px solid #005689; padding:10px;}
+.job_bx .ma_hed{margin-top:50px;}
+.a_bold a{font-family: open sans;
+font-size: 15px;
+font-weight: 600;}
+.job_bx h1, .job_bx .ma_hed h3{color:#4286f5;  font-family: cursive, arial;  font-size: 21px;  margin: 0 0 10px;  padding: 0;}
+.job_bx p{margin-bottom:18px;}
+.job_bx {
+  background: #e7f7fb none repeat scroll 0 0;
+  border: 1px solid #c9c9dd;
+  margin: 0 0 20px;
+  padding: 10px;
+}
+
+.sign_pop .job_bx:last-child{margin:0;}
+.left_dis{float:left; width:calc(100% - 120px);}
+.apply_dis{float:right;}
+.sign_pop.log_scr{width:50% !important;  margin-left:25% !important}
+.re_sty h1{text-transform:uppercase; margin-bottom:42px;}
+.a_bold a {margin-bottom:28px;
+    float: right;
+}.a_bold {
+    max-width: 700px;
+}.a_bold br {
+    clear: both;
+}
+#error-msg.alert-danger {
+	background-color: #e7f7fb;
+	border-color: #d1e6eb;
+	color: #ff0000;
+	z-index: 100;
+	position: relative;
+	line-height: 100%;
+clear:both
+}
+#error-msg.alert-danger:empty{display:none;}
+
+#notice{
+display: none;}
+
+@media(max-width:991px){
+	form.navbar-form.navbar-left.navbar-left{width:calc(100% - 265px);}
+	form.navbar-form.navbar-left.navbar-left .form-group{width:100%;}
+	form.navbar-form.navbar-left.navbar-left .form-group select, form.navbar-form.navbar-left.navbar-left .form-group input{width:45%; width:calc(50% - 60px)}
+	form.navbar-form.navbar-left.navbar-left .form-group input.btn.btn-default{width:auto;}
+body{overflow-x:hidden; max-width:100%}
+}
+@media(max-width:767px){.left_dis{width:100%}
+body{overflow-x:hidden;}.banner_img{ margin-left:-150%; margin-top:53px; max-width:400%;  width:400%;} footer{margin-top:0;  position: relative;  width: 100%;}
+	.content{top:100px;}
+	nav.navbar.navbar-default{position:absolute !important;}
+	.banner .content{top:100px;}
+	.navbar{height:auto;}
+	.navbar-collapse{background:#fff;}
+	form.navbar-form.navbar-left.navbar-left{width:100%;}
+	nav .nav > li{display: inline-block;}
+	form.navbar-form.navbar-left.navbar-left .form-group select, form.navbar-form.navbar-left.navbar-left .form-group input {
+  	float: left; width:100%; margin-bottom:10px;}	
+	.content h1{font-size:25px; margin-top:20px;}
+	.banner_cov, .banner_cov img{max-width:1000%; min-height:300px; width:auto;}
+	.sign_pop.log_scr{margin-left: 0 !important;  width: 100% !important;}
+	.sign_pop{margin-top:100px;}
+table {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #333;
+  letter-spacing: 0;
+  margin-left: 10px;
+  padding: 4px 11px;
+  width: 100%;
+}
+} 

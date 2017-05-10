@@ -41,7 +41,7 @@ development:
 
 production:
   <<: *default
-  host: 139.59.179.138
+  host: localhost
   user: rails
   database: recruitment_production
   password: 6tSeWwYQny

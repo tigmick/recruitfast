@@ -1,0 +1,12 @@
+<% if (@resource.candidate? rescue false) %>
+Hello <%= @resource.first_name%><br>
+<div style="margin-top:10px;"> Your resume has been downloaded by <%= @job.title %><div>
+<% else %>
+Hello Admin <br>
+<div style="margin-top:10px;"> <%= @candidate.first_name %>'s resume has been downloaded by  for job title - <%= @job.title %></div>.
+<% end %> 
+<div style='margin-top:10px;'>
+<b>Regards 
+	<br>MYPHD<br>
+Team</b>
+</div>

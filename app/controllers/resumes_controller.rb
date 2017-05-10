@@ -1,10 +1,16 @@
 class ResumesController < ApplicationController
+
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /resumes
   # GET /resumes.json
   def index
-    @resumes = Resume.all
+    @resumes = current_user.resumes
+    if current_user.client?
+      @resumes = User.find(params[:user_id]).resumes
+      @job = Job.find(params[:job_id])
+    end
   end
 
   # GET /resumes/1
@@ -62,10 +68,13 @@ class ResumesController < ApplicationController
 
   def download
     doc = Resume.find(params[:id])
-    data = open("#{doc.cv.path}")
-    send_data data.read, filename: "#{doc.cv.path}", :type=>"application/#{doc.cv.path.split(".").last}", disposition: 'inline', stream: 'true', buffer_size: '4096' 
+    file = File.open(open("#{doc.cv.path}"))
+    data = file.read
+    doc.track_resume(params[:job_id])  if (params[:job_id].present?) 
+    send_data(data, :type => "application/#{doc.cv.path.split(".").last}", :filename => "#{doc.cv_file_name}", :x_sendfile=>true)
     return
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

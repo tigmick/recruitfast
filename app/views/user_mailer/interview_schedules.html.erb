@@ -1,0 +1,13 @@
+Hi 
+<%= (@resource.first_name.present? rescue false) ? @resource.first_name : "Admin"  %>          
+<div style="margin-top:10px;"> 
+New Update on Job title - ( <%= @schedule.interview.job.title %> )
+
+
+The INTERVIEW DATE is  
+<%= @schedule.interview_avail_dates.empty? ? "soon" : @schedule.interview_avail_dates.values.join(", ")  %>.     
+</div>                                                                                    
+<div style="margin-top:10px;">    
+<b>Regards<br>
+MYPHD <br> Team</b>
+</div>

@@ -1,0 +1,6 @@
+<% @users.each do |user| %>
+ <%= user.email %>
+ <%= link_to "REVIEW USER", "/users/#{user.id}/user_profile?job_id=#{@job.id}&review=true" %>
+
+ <br>
+<% end %>
