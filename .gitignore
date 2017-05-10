@@ -15,3 +15,13 @@
 /log/*
 !/log/.keep
 /tmp
+
+
+/public/
+/public/stylesheets/compiled
+/public/uploads/*
+
+
+/config/application.yml
+/config/database.yml
+/ruby
