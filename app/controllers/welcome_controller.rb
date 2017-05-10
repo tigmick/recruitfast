@@ -16,6 +16,23 @@ class WelcomeController < ApplicationController
 
   def search_candidate
    # user_ids =  UserJob.all.select{|j| (j.job_ids & current_user.jobs.map(&:id)).any?}.map(&:user_id).uniq
-   @users =  User.where("first_name LIKE ? AND role = ?","#{params[:search_candidate]}%", "candidate")
+   # @users =  User.where("first_name LIKE ? AND role = ?","#{params[:search_candidate]}%", "candidate")
+    if params[:salary_aearch].present?
+      if params[:salary_aearch] < "60000"
+        a = "0"   
+        b = params[:salary_aearch].to_s
+      else
+        a = "60000"
+        b = User.maximum(:salary_expectation)
+      end
+    else
+      a = "0"
+      b = User.maximum(:salary_expectation)
+    end
+
+   @users =  User.where("lower(first_name) LIKE ? AND role = ? OR lower(current_location) LIKE ? OR lower(salary_expectation) BETWEEN ? AND ?","#{params[:search_candidate].downcase}%", "candidate", "#{params[:location_search].downcase}%", a, b)
   end
 end
+
+
+# "salary_expectation BETWEEN ? AND ?", 0.to_s, 30000.to_s
