@@ -69,3 +69,5 @@ gem 'unicorn'
 group :production do
 	gem 'byebug'
 end
+
+gem 'figaro'
