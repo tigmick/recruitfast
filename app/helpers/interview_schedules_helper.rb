@@ -4,7 +4,7 @@ module InterviewSchedulesHelper
     
 			unless schedule.client_comments.empty?
 			  schedule.client_comments.each do |comment|
-			   html += "<div><b>#{comment.user.first_name}</b> : <a href='#' data-toggle='tooltip' data-placement='bottom' title='#{comment.comment}'>#{comment.comment.truncate(460).capitalize}</a></div>"
+			   html += "<div><b>#{comment.user.first_name}</b> : <a href='#' data-toggle='tooltip' data-placement='bottom' title='#{comment.comment}'>#{comment.comment.truncate(75).capitalize}</a></div>"
 			   html += "<button onclick='show(#{schedule.id},#{comment.id},\"#{comment.comment}\")' class='btn btn-primary' id='myBtn'>Edit</button>  #{link_to 'Delete',destroy_comment_path(comment),method: :delete}<br>"  if current_user.id.eql?(comment.user_id)
 			  end	
 				html += "<button onclick='show(#{schedule.id},\"\",\"\")' class='btn btn-primary' id='myBtn'>Add comment</button>"  if current_user.client?
@@ -19,7 +19,7 @@ module InterviewSchedulesHelper
 	  html = ""
 		  unless schedule.candidate_feedbacks.empty?
 		    schedule.candidate_feedbacks.each do |feedback|
-		     html +=  "<div><b>#{feedback.user.first_name}</b> : <a href='#' data-toggle='tooltip' data-placement='bottom' title='#{feedback.feedback}'>#{feedback.feedback.truncate(460).capitalize}</a></div>"
+		     html +=  "<div><b>#{feedback.user.first_name}</b> : <a href='#' data-toggle='tooltip' data-placement='bottom' title='#{feedback.feedback}'>#{feedback.feedback.truncate(75).capitalize}</a></div>"
 		     html += "<button onclick='feedback(#{schedule.id},#{feedback.id},\"#{feedback.feedback}\")' class='btn btn-primary' id='myBtn'>edit</button>  #{link_to 'delete',destroy_feedback_path(feedback),method: :delete}<br>"  if current_user.id.eql?(feedback.user_id)
 		    end	
 		    html += "<button onclick='feedback(#{schedule.id},\"\",\"\")' class='btn btn-primary' id='myBtn'>Add feedback</button>" unless current_user.client?
