@@ -133,7 +133,7 @@ module UsersHelper
 				unless job.interview_schedules.where(user_id: review.user_id).empty? 
 				add = "<div style='padding:30px;'><button onclick='meeting_with(#{review.id},\"\")' class='btn btn-primary' id='myBtn'>Add</button>"
 				edit = "<button onclick='meeting_with(#{review.id},\"#{review.meeting}\")' class='btn btn-primary' id='myBtn'>Edit</button>"
-				html +=	review.meeting.present? ? "<div style='padding:21px;'><a href='#' data-toggle='tooltip' data-placement='bottom' title='#{review.meeting}'>#{review.meeting.truncate(40)}</a>"+edit : add
+				html +=	review.meeting.present? ? "<div style='padding:21px;'><a href='#' data-toggle='tooltip' data-placement='bottom' title='#{review.meeting}'>#{review.meeting.truncate(70)}</a>"+edit : add
 		  	else
 		  	html +=	"<div style='padding:30px;'>No"
 		  	end
