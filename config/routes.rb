@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   get 'privacy',:to => "welcome#privacy", :as => :privacy
   get 'contact',:to => "welcome#contact", :as => :contact
   get 'term_condition',:to => "welcome#term_condition", :as => :term_condition
+  get 'platform',  :to => 'welcome#platform', :as => :platform
   post 'welcome/search'
   match 'welcome/search', :to => "welcome#search", :as => :search, :via => [:get,:post]
   match 'welcome/search_candidate', :to => "welcome#search_candidate", :as => :search_candidate, :via => [:get,:post]
