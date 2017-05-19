@@ -35,16 +35,16 @@ default: &default
 development:
   <<: *default
   host: localhost
-  username: postgres
+  username: root
   database: recruitment_development
-  password: 12345678
+  password: root
 
 production:
   <<: *default
   host: localhost
-  user: rails
+  user: root
   database: recruitment_production
-  password: 6tSeWwYQny
+  password: root
 
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
