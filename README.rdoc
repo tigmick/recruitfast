@@ -26,3 +26,32 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+# yourcube.co.uk
+
+Application behind yourcube.co.uk
+## 'rails', '4.2.7'
+## ruby, rvm  use ruby 2.3.1p112  
+# Development Notes
+ clone project from here https://github.com/tigmick/rec-live
+## Run bundle install
+## Database Setup
+   use postgres database
+## cp config/database.example.rb config/database.rb
+## add config/application.yml inside config (smtp setting username and password)
+  development: 
+    USER_NAME: xxxxxx@gmail.com
+    PASSWORD: password
+  production:
+    USER_NAME: xxxxxx@gmail.com
+    PASSWORD: password
+
+## run rake db:migrate
+## run rake db:seed (to create industry and admin user)
+
+## run rails s 
+## open url in browser http://localhost:3000/
+## cherss enjoy !!!!!
+## 
+
+
