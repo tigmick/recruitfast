@@ -12,7 +12,7 @@ ActiveAdmin.register User do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  permit_params :email, :first_name,:last_name, :password, :password_confirmation,:role
+  permit_params :email, :first_name,:last_name, :password, :password_confirmation,:role, :contact_no, :varify_candidate, :status
    breadcrumb do
      []   
    end 
@@ -37,6 +37,9 @@ ActiveAdmin.register User do
       f.input :varify_candidate , :as => :check_boxes
       f.label :role, class: "select-role"
       f.select(:role, options_for_select(['client', 'candidate']),style:"margin-left:225px;")
+      f.label :status, class: "select-status"
+      f.select(:status, options_for_select([true, false]))
+
       
     end
     f.actions
