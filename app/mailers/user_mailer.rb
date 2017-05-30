@@ -74,14 +74,18 @@ class UserMailer < ApplicationMailer
     mail(from: AdminUser.first.email,to: @resource.email, subject: @subject)
   end
 
-  def candidate_email_alert(resource)
+  def candidate_email_alert(resource, user)
     if (resource.first_name.present? rescue false)
       html = "Thanks for registering on MYPHD.<br>"
       html += "Username - #{resource.first_name}<br>"
+      html += "Email    - #{resource.email}<br>"
       html += "password - #{resource.password}<br>"
       @content = html
     else
       html = "New User have registered on your site."
+      html += "Username - #{user.first_name}<br>"
+      html += "Email    - #{user.email}<br>"
+      html += "password - #{user.password}<br>"
       html +="Username."
       @content = html
     end
