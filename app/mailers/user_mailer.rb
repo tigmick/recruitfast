@@ -82,16 +82,16 @@ class UserMailer < ApplicationMailer
       html += "password - #{resource.password}<br>"
       @content = html
       @subject = resource.role.upcase + " EMAIL ALERT REGISTRATION"
+      mail(from: AdminUser.first.email,to: resource.email, subject: @subject)
     else
-      html = "New User have registered on your site."
+      html = "New User have registered on your site.<br>"
       html += "Username - #{user.first_name}<br>"
       html += "Email    - #{user.email}<br>"
       html += "password - #{user.password}<br>"
-      html +="Username."
+      # html +="Username."
       @content = html
       @subject = user.role.upcase + " EMAIL ALERT REGISTRATION"
+      mail(from: AdminUser.first.email,to: AdminUser.first.email, subject: @subject)
     end
-    @subject = "CANDIDATE EMAIL ALERT REGISTRATION"
-    mail(from: AdminUser.first.email,to: resource.email, subject: @subject)
   end
 end
