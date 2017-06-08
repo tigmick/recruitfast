@@ -11,7 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
-    resource.save 
+    resource.save
     UserMailer.candidate_email_alert(resource, nil).deliver_now if resource.save
     UserMailer.candidate_email_alert(AdminUser.first, resource).deliver_now if resource.save
 

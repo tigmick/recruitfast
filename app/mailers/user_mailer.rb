@@ -75,6 +75,7 @@ class UserMailer < ApplicationMailer
   end
 
   def candidate_email_alert(resource, user)
+    @resource = resource
     if (resource.first_name.present? rescue false)
       html = "Thanks for registering on MYPHD.<br>"
       html += "Username - #{resource.first_name}<br>"
