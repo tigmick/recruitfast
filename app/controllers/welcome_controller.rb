@@ -2,6 +2,10 @@ class WelcomeController < ApplicationController
 	include WelcomeHelper
   def index
   end
+
+  def index2
+    render "index2",layout: "application1"
+  end
   def search
     # @search = PgSearch.multisearch(params[:search])
     if params[:search].present? || params[:category].present?
