@@ -28,9 +28,18 @@
             </ul>
             
         </div>
+        
+         <div class="navbar-header" style="">
+         <ul class="nav navbar-nav ">
+           <li ><a href="#" style="color: black; padding: 5px;">Trading System</a></li>
+           <li><a href="#" style="color: black;padding: 5px;">Commision management</a></li>
+            <li><a href="#" style="color: black; padding: 5px;">Trading Infrastructure</a></li>
+           <li><a href="#" style="color: black;padding: 5px;">Exchanges</a></li> 
+       </ul> 
+        </div> 
         <div class="col-sm-5 col-xs-12">
         <img class="i" src="<%= asset_path('FT4A8014-1-2560x490.png') %>">
-    </div>     
+    </div>    
     </div> 
  </section>
 <script src="https://code.jquery.com/jquery-3.2.1.js"
@@ -40,7 +49,10 @@
     </script>
  </body>
 </html>
+
+
 <style type="text/css">
+
 nav .nav>li {
      padding: 0px 0; 
 }
@@ -105,9 +117,10 @@ height: 420px;
 .navbar-default{
     border: none;
 }
-.navbar-default .navbar-nav>li>a:hover
+.navbar-default .navbar-nav>li>a:hover 
 {
-    color: #BDA255 ;
+    color: #BDA255 !important;
+
 }
 
 @media(min-width:989){
@@ -120,6 +133,7 @@ height: 420px;
     padding-bottom: 24px;
     padding-top: 14px;
     padding-bottom: 11px;
+
 
 }
 .navb .form-control
@@ -187,6 +201,7 @@ padding: 5px 20px;
 border-radius: 15px;
 margin-right: 20px;  
 }
+
 .footer-ul li a{
     color: #AFA79C;
 }
@@ -196,13 +211,18 @@ footer .p
     color: white;
     padding: 2px 20px 10px 42px;
 }
-nav .nav>li>a i {
+nav .nav>li>a i{
     font-size: 13px; 
     min-width: 15px;
     display: inline-block;
     text-align: center;
-    color: #777;
+    color: #fff;
 }
+nav .nav>li>a i:hover{
+    color: #BDA255 !important;
+
+    }
+
 nav .form-group {
     float: left;
     margin-left: 15px;
@@ -211,5 +231,28 @@ nav .form-group {
 }
 nav .nav>li>a {
     font-size: 13px;
+}
+.navbar-default .navbar-nav > li > a {
+
+    color: #fff !important ;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 10px;
+    padding: 14px 11px;
+
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    background-color: none !important;
+}
+
+nav .navbar-nav > li > a:hover{
+    background-color: none !important;
+}
+
+nav > li > a:focus, .nav > li > a:hover {
+    background-color: none !important;
+    text-decoration: none;
 }
 </style>
