@@ -3,7 +3,7 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="  #bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -14,47 +14,50 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ><a href="http://www.akj.com/hedge-fund-solution">Hedge fund platform </a></li>
-        <li><a href="http://www.akj.com/prime-brokerage">Prime brokerage</a></li>
-        <li><a href="http://www.akj.com/trading-and-dma">Trading and DMA</a></li>
-        <li><a href="http://www.akj.com/our-technology">Our technology</a></li>
-        <li><a href="http://www.akj.com/about-akj">About AK Jensen</a></li>
-      </ul>
+           <li ><a href="http://www.akj.com/hedge-fund-solution">Hedge fund platform </a></li>
+           <li><a href="http://www.akj.com/prime-brokerage">Prime brokerage</a></li>
+           <li><a href="http://www.akj.com/trading-and-dma">Trading and DMA</a></li>
+           <li><a href="http://www.akj.com/our-technology">Our technology</a></li>
+           <li><a href="http://www.akj.com/about-akj">About AK Jensen</a></li>
+       </ul>
         <ul class="nav navbar-nav navbar-right ">
             <li><a href="https://optracker.akj.com/OpTracker/?page=login"><i class="glyphicon glyphicon-search"></i> login</a></li>
         </ul>
-      
+
+     </div><!-- /.navbar-collapse -->
         
       
-    </div><!-- /.navbar-collapse -->
+    
   </div><!-- /.container-fluid -->
-</nav>
-        <nav class="navbar navb"> 
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
+  </nav>
+
+
+   <nav class="navbar navb"> 
+    <div class="container">
+     <!-- Brand and toggle get grouped for better mobile display -->
     
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="" >
       
        <% if user_signed_in? %>
         <%if current_user.candidate? %>
-          <%= form_tag welcome_search_path, :method=> :post,:class=>"navbar-form navbar-left" do%>
-      <div class="form-group">
-      <%#= text_field_tag "search" ,nil,:class=>"form-control", :placeholder=>"Search Jobs"%>
-      <%= select_tag "category", options_from_collection_for_select(Industry.all, "id", "title"),class: 'form-control',:prompt => 'Select Job Category'%> 
-      <%= submit_tag "Search", :class=>"btn btn-default"%>
-      </div>
+            <%= form_tag welcome_search_path, :method=> :post,:class=>"navbar-form navbar-left" do%>
+           <div class="form-group">
+                 <%#= text_field_tag "search" ,nil,:class=>"form-control", :placeholder=>"Search Jobs"%>
+               <%= select_tag "category", options_from_collection_for_select(Industry.all, "id", "title"),class: 'form-control',:prompt => 'Select Job Category'%> 
+               <%= submit_tag "Search", :class=>"btn btn-default"%>
+           </div>
           <% end %>
         <% end %>
           <%if current_user.client? %>
-            <%= form_tag search_candidate_path, :method=> :post,:class=>"navbar-form navbar-left" do%>
+                <%= form_tag search_candidate_path, :method=> :post,:class=>"navbar-form navbar-left" do%>
               <!-- <div class="form-group"> -->
-              <%= text_field_tag "search_candidate" ,nil,:class=>"form-control", :placeholder=>"Search Candidates"%>
+                <%= text_field_tag "search_candidate" ,nil,:class=>"form-control", :placeholder=>"Search Candidates"%>
              
-             <%= text_field_tag "location_search" ,nil,:class=>"form-control", :placeholder=>" Search Location  "%>
+                <%= text_field_tag "location_search" ,nil,:class=>"form-control", :placeholder=>" Search Location  "%>
 
-             <%#= text_field_tag "salary_aearch" ,nil,:class=>"form-control", :placeholder=>" Search Salary"%>
+              <%#= text_field_tag "salary_aearch" ,nil,:class=>"form-control", :placeholder=>" Search Salary"%>
               <select class="form-control" name="salary_aearch" >
                 <option value="30000"> Less than 30000</option>
                 <option value="60000"> Less than 60000</option>
@@ -66,31 +69,31 @@
             <% end %>
           <%end%>
     <% else %>
-      <%= form_tag welcome_search_path, :method=> :post,:class=>"navbar-form navbar-left" do%>
-      <div class="form-group">
-      <%#= text_field_tag "search" ,nil,:class=>"form-control", :placeholder=>"Search Jobs"%>
-      <%= select_tag "category", options_from_collection_for_select(Industry.all, "id", "title"),class: 'form-control',:prompt => 'Select Job Category'%> 
-      <%= submit_tag "Search", :class=>"btn btn-default"%>
-      </div>
-          <% end %>
-        <%end%>
+              <%= form_tag welcome_search_path, :method=> :post,:class=>"navbar-form navbar-left" do%>
+              <div class="form-group">
+              <%#= text_field_tag "search" ,nil,:class=>"form-control", :placeholder=>"Search Jobs"%>
+              <%= select_tag "category", options_from_collection_for_select(Industry.all, "id", "title"),class: 'form-control',:prompt => 'Select Job Category'%> 
+              <%= submit_tag "Search", :class=>"btn btn-default"%>
+            </div>
+                <% end %>
+              <%end%>
       <ul class="nav navbar-nav navbar-right c add_focus">
         
-          <% if !user_signed_in? %>
-            <li><%= link_to "SignUp For candidate", new_user_registration_path(role: 'candidate'), class: "btn btn-primary b" %></li>
-            <li><%= link_to "Sign In",  new_user_session_path, class: "btn btn-primary g" %></li>
-          <% else %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.try(:first_name)%> <span class="caret"></span></a>
+             <% if !user_signed_in? %>
+                   <li><%= link_to "SignUp For candidate", new_user_registration_path(role: 'candidate'), class: "btn btn-primary b" %></li>
+                    <li><%= link_to "Sign In",  new_user_session_path, class: "btn btn-primary g" %></li>
+             <% else %>
+               <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.try(:first_name)%> <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#"><%= current_user.email%></a></li>
-                <li role="separator" class="divider"></li>
-                <li><%= link_to "Go to Dashboard", users_dashboard_path%>
-               
-                <li role="separator" class="divider"></li>
-                <li><%= link_to "Edit",  edit_user_registration_path %></li>
-                <li role="separator" class="divider"></li>
-                <li><%= link_to "Logout",  destroy_user_session_path, method: :delete%></li>
+                   <li><a href="#"><%= current_user.email%></a></li>
+                   <li role="separator" class="divider"></li>
+                   <li><%= link_to "Go to Dashboard", users_dashboard_path%>
+                  
+                   <li role="separator" class="divider"></li>
+                   <li><%= link_to "Edit",  edit_user_registration_path %></li>
+                   <li role="separator" class="divider"></li>
+                   <li><%= link_to "Logout",  destroy_user_session_path, method: :delete%></li>
               </ul>
             </li>
           <% end %>
