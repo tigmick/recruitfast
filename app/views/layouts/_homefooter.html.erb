@@ -5,14 +5,29 @@
             <li><a class="contact_form" href="<%= contact_path%>" style="border-radius: 30px;">Contact us</a></li>
             <li><a href="http://www.akj.com/about-akj#ouroffices" style="border-radius: 30px;">Our Offices</a></li>
             <li><a class="news_feed" href="http://www.akj.com/news" style="border-radius: 30px;">News</a></li>
-            <li><a class="news_feed" href="www.yourcube.co.uk/jobs" style="border-radius: 30px;">careers</a></li>
+            <li><a class="news_feed" href="#" style="border-radius: 30px;" onclick="document.getElementsByTagName('body')[0].style='margin-top:0;';
+		document.getElementsByTagName('iframe')[0].className='fullScreen';">careers</a></li>
          </ul>
         </div>
         <div class="clear"></div>
         <div class="p" >AK Jensen Group Limited | AK Jensen Investment Management Limited, authorised and regulated by the Financial Services Authority (FCA) | AK Jensen Limited, authorised and regulated by the Financial Services Authority (FCA) | AK Jensen Inc. | AKJ Simplon RICC Limited authorised and regulated by the Malta Financial Services Authority (MFSA)</div>
     </div>
   </footer>
+
+<iframe src="http://yourcube.co.uk/welcome/search" style="width:0; height: 0;"></iframe>
+
   <style type="text/css">
+iframe.fullScreen {
+width: 100% !important;
+height: 100% !important;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 10;
+border: 0;
+}
+
+
   footer
 {
     background: #4D4D4D
